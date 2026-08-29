@@ -156,7 +156,7 @@
 <main>
   <a href="barcelona.html" class="team-card barca-card">
     <div class="crest-wrap">
-      <img id="badge-barca" alt="Escudo do Barcelona">
+      <img src="https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg" alt="Escudo do Barcelona">
     </div>
     <div class="name">Barcelona</div>
     <div class="tag">La Liga</div>
@@ -164,7 +164,7 @@
 
   <a href="flamengo.html" class="team-card fla-card">
     <div class="crest-wrap">
-      <img id="badge-fla" alt="Escudo do Flamengo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Flamengo-RJ_%281980-2018%29.svg" alt="Escudo do Flamengo">
     </div>
     <div class="name">Flamengo</div>
     <div class="tag">Brasileirão</div>
@@ -172,23 +172,6 @@
 </main>
 
 <footer>dados via TheSportsDB</footer>
-
-<script>
-async function loadBadge(teamName, imgId){
-  try{
-    const res = await fetch(`https://www.thesportsdb.com/api/v1/json/123/searchteams.php?t=${encodeURIComponent(teamName)}`);
-    const data = await res.json();
-    const team = data.teams && data.teams[0];
-    if(team && team.strTeamBadge){
-      document.getElementById(imgId).src = team.strTeamBadge;
-    }
-  }catch(e){
-    console.error('não foi possível carregar o escudo de', teamName, e);
-  }
-}
-loadBadge('Barcelona', 'badge-barca');
-loadBadge('Flamengo', 'badge-fla');
-</script>
 
 </body>
 </html>
