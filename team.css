@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;600;800&display=swap');
+
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  min-height:100vh;
+  background:var(--bg);
+  color:#fff;
+  font-family:'Manrope',system-ui,sans-serif;
+}
+
+.back{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:16px 20px;
+  color:rgba(255,255,255,0.65);
+  text-decoration:none;
+  font-size:13px;
+  letter-spacing:0.5px;
+}
+.back:hover{ color:#fff; }
+
+header.hero{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:10px 16px 40px;
+  text-align:center;
+}
+header.hero img{
+  width:110px;height:110px;
+  object-fit:contain;
+  filter:drop-shadow(0 8px 20px rgba(0,0,0,0.5));
+  margin-bottom:16px;
+}
+header.hero h1{
+  font-family:'Anton',sans-serif;
+  font-weight:400;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-size:clamp(28px,6vw,46px);
+  margin:0;
+}
+header.hero .league{
+  color:var(--accent);
+  font-size:13px;
+  letter-spacing:1px;
+  margin-top:6px;
+}
+
+.standing-pill{
+  display:inline-flex;
+  align-items:baseline;
+  gap:10px;
+  margin-top:22px;
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:999px;
+  padding:10px 22px;
+}
+.standing-pill #pos{
+  font-family:'Anton',sans-serif;
+  font-size:26px;
+  color:var(--accent);
+}
+.standing-pill #pts{
+  font-size:12px;
+  color:rgba(255,255,255,0.7);
+}
+
+main{
+  max-width:900px;
+  margin:0 auto;
+  padding:0 16px 70px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:28px;
+}
+@media (max-width:640px){ main{ grid-template-columns:1fr; } }
+
+section h2{
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  color:rgba(255,255,255,0.5);
+  margin:0 0 12px;
+}
+
+.match{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:10px;
+  padding:12px 14px;
+  margin-bottom:8px;
+  font-size:13px;
+}
+.match .names em{ color:rgba(255,255,255,0.4); font-style:normal; margin:0 4px; }
+.match .score{ font-weight:800; color:var(--accent); }
+.match .date{ color:rgba(255,255,255,0.5); font-size:12px; }
+
+.err{ color:#e0605f; font-size:13px; }

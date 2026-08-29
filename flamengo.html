@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flamengo · Timões do Xerem</title>
+<link rel="stylesheet" href="team.css">
+<style>
+  :root{
+    --bg:#1a0000;
+    --accent:#c8102e;
+  }
+  body{
+    background:
+      radial-gradient(1200px 600px at 50% -10%, #3a0000 0%, transparent 60%),
+      linear-gradient(180deg, #170000, #050505);
+    min-height:100vh;
+  }
+</style>
+</head>
+<body>
+
+<a class="back" href="index.html">← Timões do Xerem</a>
+
+<header class="hero">
+  <img id="logo" alt="Escudo Flamengo">
+  <h1>Flamengo</h1>
+  <div class="league">Brasileirão</div>
+  <div class="standing-pill">
+    <span id="pos">—</span>
+    <span id="pts">carregando...</span>
+  </div>
+</header>
+
+<main>
+  <section>
+    <h2>Últimos jogos</h2>
+    <div id="last" class="err">carregando...</div>
+  </section>
+  <section>
+    <h2>Próximos jogos</h2>
+    <div id="next" class="err">carregando...</div>
+  </section>
+</main>
+
+<script src="team.js"></script>
+<script>loadTeam(5981);</script>
+</body>
+</html>
