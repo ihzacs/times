@@ -135,7 +135,7 @@
 
   @media (max-width:600px){
     body{
-      background:linear-gradient(180deg,
+      background:linear-gradient(90deg,
         var(--barca-blue) 0%, var(--barca-blue) 16.66%,
         var(--barca-garnet) 16.66%, var(--barca-garnet) 33.33%,
         var(--barca-gold) 33.33%, var(--barca-gold) 50%,
@@ -156,7 +156,7 @@
 <main>
   <a href="barcelona.html" class="team-card barca-card">
     <div class="crest-wrap">
-      <img src="https://api.sofascore.com/api/v1/team/2817/image" alt="Escudo do Barcelona">
+      <img id="badge-barca" alt="Escudo do Barcelona">
     </div>
     <div class="name">Barcelona</div>
     <div class="tag">La Liga</div>
@@ -164,14 +164,32 @@
 
   <a href="flamengo.html" class="team-card fla-card">
     <div class="crest-wrap">
-      <img src="https://api.sofascore.com/api/v1/team/5981/image" alt="Escudo do Flamengo">
+      <img id="badge-fla" alt="Escudo do Flamengo">
     </div>
     <div class="name">Flamengo</div>
     <div class="tag">Brasileirão</div>
   </a>
 </main>
 
-<footer>dados via SofaScore</footer>
+<footer>dados via TheSportsDB</footer>
+
+<script>
+async function loadBadge(teamName, imgId){
+  try{
+    const res = await fetch(`https://www.thesportsdb.com/api/v1/json/3/searchteams.php?t=${encodeURIComponent(teamName)}`);
+    const data = await res.json();
+    const team = data.teams && data.teams[0];
+    if(team && team.strTeamBadge){
+      document.getElementById(imgId).src = team.strTeamBadge;
+    }
+  }catch(e){
+    console.error('não foi possível carregar o escudo de', teamName, e);
+  }
+}
+loadBadge('Barcelona', 'badge-barca');
+loadBadge('Flamengo', 'badge-fla');
+</script>
 
 </body>
 </html>
+
