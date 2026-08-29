@@ -44,9 +44,7 @@ async function loadTeam(teamName){
       document.getElementById('last').innerHTML = '<div class="err">time não encontrado</div>';
       return;
     }
-    if(team.strTeamBadge){
-      document.getElementById('logo').src = team.strTeamBadge;
-    }
+    // escudo já fixo no HTML, não sobrescreve
     const teamId = team.idTeam;
     const leagueName = team.strLeague;
 
